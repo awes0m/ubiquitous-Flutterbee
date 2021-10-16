@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tour_apisod/models/meal.dart';
-import 'package:tour_apisod/screens/single_meal_screen.dart';
+import 'package:tour_apisod/screens/meal_detail_screen.dart';
 
 class MealItem extends StatelessWidget {
   final String id;

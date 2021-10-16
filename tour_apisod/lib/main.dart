@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tour_apisod/screens/single_meal_screen.dart';
+import './screens/meal_detail_screen.dart';
+import './screens/tabs_screen.dart';
 
 import './screens/categories_screen.dart';
 import './screens/category_meals_screen.dart';
@@ -15,8 +16,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Godlymeals',
       theme: ThemeData(
-        primarySwatch: Colors.indigo,
-        accentColor: Colors.amber,
         canvasColor: const Color.fromRGBO(255, 254, 229, 1),
         textTheme: ThemeData.light().textTheme.copyWith(
               bodyText2: const TextStyle(
@@ -28,12 +27,15 @@ class MyApp extends StatelessWidget {
                 fontFamily: 'RobotoCondensed',
               ),
             ),
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.indigo)
+            .copyWith(secondary: Colors.amber),
       ),
       // home: CategoriesScreen(),
       initialRoute: '/', //default is '/'
       routes: {
-        '/': (ctx) => CategoriesScreen(),
+        '/': (ctx) => Tabsscreen(),
         CategoryMealScreen.routename: (ctx) => CategoryMealScreen(),
+        // ignore: prefer_const_constructors
         MealDetailsScreen.routename: (ctx) => MealDetailsScreen(),
       },
     );
